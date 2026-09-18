@@ -2,6 +2,7 @@ from agno.agent import Agent
 from agno.models.groq import Groq
 from dotenv import load_dotenv
 from agno.db.sqlite import SqliteDb
+from rich.pretty import pprint
 
 load_dotenv()
 
@@ -14,13 +15,23 @@ def build_Agent():
     db = db,
     model=Groq(id="openai/gpt-oss-120b"),
     markdown=True,
-    add_history_to_context=True # for short term memory
+    add_history_to_context=True, # for short term memory
+    enable_agentic_memory= True
   )
+
 
 agent = build_Agent()
 
-agent.print_response("What is the capital of India?")
-agent.print_response("Which are the best places to visit it?")
+user_id  = "krishngupta@gmail.com"
+
+agent.print_response("What is the capital of India?", user_id=user_id)
+agent.print_response("Which are the best places to visit it?", user_id= user_id)
+
+memories = agent.get_user_memories(
+  user_id= user_id
+)
+print("Memories: ")
+pprint(memories)
 
 # first install sqlalchemy from sqlalchemy
 
@@ -209,3 +220,19 @@ agent.print_response("Which are the best places to visit it?")
 # ┃ accommodation, transport, or local food, just let me know. 🚂🕌🏞️  ┃
 # ┃                                                                    ┃
 # ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+# Memories: 
+# [
+# │   UserMemory(
+# │   │   memory='User is interested in travel destinations in India and wants recommendations for best places to visit.',
+# │   │   memory_id='945fabe1-a6db-4f11-ba11-f1eb44efc8f2',
+# │   │   topics=['travel', 'India', 'recommendations'],
+# │   │   user_id='krishngupta@gmail.com',
+# │   │   input='Add a memory recording that the user is interested in travel destinations in India and wants recommendations for best places to visit.',
+# │   │   created_at=1789697571,
+# │   │   updated_at=1789697571,
+# │   │   feedback=None,
+# │   │   agent_id=None,
+# │   │   team_id=None
+# │   )
+# ]
