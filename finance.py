@@ -17,7 +17,6 @@ def build_agent():
     description="You are an investment analyst that researches stock prices, analyst recommendations, and stock fundamentals.",
     instructions=["Format your response using markdown and use tables to display data where possible."],
     add_datetime_to_context=True
-
   )
 
 agent = build_agent()
