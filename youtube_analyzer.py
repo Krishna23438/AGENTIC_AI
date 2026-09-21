@@ -6,7 +6,8 @@ from agno.tools.youtube import YouTubeTools
 
 load_dotenv()
 
-youtube_agent = Agent(
+def youtube_agent():
+  Agent(
   name="Youtube Agent",
   model=Groq(id="openai/gpt-oss-120b"),
   tools=[YouTubeTools()],
@@ -47,14 +48,14 @@ youtube_agent = Agent(
     - Maintain consistent detail level
     - Focus on valuable content markers
 
-"""),
-add_datetime_to_context=True,
-markdown=True
-)
+  """),
+  add_datetime_to_context=True,
+  markdown=True
+  )
 
-response = youtube_agent.print_response(
-  "Analyze this video: https://www.youtube.com/watch?v=3TGqlQxpuU0",
-  stream=True,
-)
+# response = youtube_agent.print_response(
+#   "Analyze this video: https://www.youtube.com/watch?v=3TGqlQxpuU0",
+#   stream=True,
+# )
 
-print(response)
+# print(response)
