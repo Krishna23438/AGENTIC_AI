@@ -31,11 +31,11 @@ youtube_agent = Agent(
     - Begin with a video overview
     - Use clear, descriptive segment titles
     - Include relevant emojis for content types:
-    📚  Educational
-    💻  Technical
-    🎮  Gaming
-    📱  Tech Review
-    🖌️ Creative
+     📚  Educational
+     💻  Technical
+     🎮  Gaming
+     📱  Tech Review
+     🖌️  Creative
     - Highlight key learning points
     - Note practical demontrations
     - Mark important references
@@ -51,3 +51,10 @@ youtube_agent = Agent(
 add_datetime_to_context=True,
 markdown=True
 )
+
+response = youtube_agent.print_response(
+  "Analyze this video: https://www.youtube.com/watch?v=3TGqlQxpuU0",
+  stream=True,
+)
+
+print(response)
