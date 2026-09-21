@@ -1,29 +1,40 @@
 import streamlit as st
+
 from youtube_analyzer import youtube_agent
 
 
 st.set_page_config(
-  page_title="Youtube Video Analyzer",
-  layout='centered'
+    page_title="YouTube Video Analyzer",
+    layout="centered"
 )
 
-st.title("🎥 AI Youtube Video Analyzer")
+st.title("🎥 AI YouTube Video Analyzer")
+
 
 @st.cache_resource
 def get_agent():
-   return youtube_agent()
+    return youtube_agent()
+
 
 agent = get_agent()
 
-# input box
-video_url = st.text_input("Enter Youtube URL") # string
+if agent is None:
+    st.error("Agent initialization failed.")
+    st.stop()
 
-button = st.button("Analyze Video") # BOOL - True or false
+
+video_url = st.text_input("Enter YouTube URL")# String
+
+button = st.button("Analyze Video")# Boolean - True or false
+
 
 if video_url and button:
-   with st.spinner("analyzing video..."):
-      response = agent.print_response(
-         f"Analyze this video: {video_url}"
-      )
+    with st.spinner("Analyzing video..."):
 
-   print(response)
+        response = agent.run(
+            f"Analyze this video: {video_url}"
+        )
+
+    st.markdown("## Analysis Report of Video")
+
+    st.markdown(response.content)
