@@ -41,7 +41,11 @@ youtube_agent = Agent(
     - Mark important references
 
     Quality Guildlines:
-
+    - Verify timestamp accuracy
+    - Avoid timestamp hallucination
+    - Ensure comprehensive coverage
+    - Maintain consistent detail level
+    - Focus on valuable content markers
 
 """)
 )
