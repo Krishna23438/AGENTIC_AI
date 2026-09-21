@@ -22,7 +22,7 @@ button = st.button("Analyze Video") # BOOL - True or false
 
 if video_url and button:
    with st.spinner("analyzing video..."):
-      response = agent.run(
+      response = agent.print_response(
          f"Analyze this video: {video_url}"
       )
 

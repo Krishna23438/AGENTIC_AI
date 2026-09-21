@@ -7,7 +7,7 @@ from agno.tools.youtube import YouTubeTools
 load_dotenv()
 
 def youtube_agent():
-  Agent(
+  return Agent(
   name="Youtube Agent",
   model=Groq(id="openai/gpt-oss-120b"),
   tools=[YouTubeTools()],
