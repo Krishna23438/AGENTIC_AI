@@ -16,6 +16,7 @@ def get_agent():
 agent = get_agent()
 
 # input box
-video_url = st.text_input("Enter Youtube URL")
+video_url = st.text_input("Enter Youtube URL") # string
 
-st.button("Analyze Video")
+button = st.button("Analyze Video") # BOOL - True or false
+
