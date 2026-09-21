@@ -1,14 +1,16 @@
 from textwrap import dedent
-
+from dotenv import load_dotenv
 from agno.agent import Agent
-from agno.models.openai import OpenAIResponses
+from agno.models.groq import Groq
 from agno.tools.youtube import YouTubeTools
+
+load_dotenv()
 
 youtube_agent = Agent(
   name="Youtube Agent",
-  model=OpenAIResponses(id="gpt-5.2"),
+  model=Groq(id="openai/gpt-oss-120b"),
   tools=[YouTubeTools()],
-  instructions=dedent("""
+  instructions=dedent("""\
     You are an expert Youtube content analyst with a keen eye for detail 
     Follow these steps for comprehensive video analysis:
     1. Video Overview
@@ -19,7 +21,16 @@ youtube_agent = Agent(
       - Create precise, meaningful timestamps
       - Focus on major topic transitions
       - Highlight key moments and demonstrations
-      - Format: [start_time, end_time, detailes_summary]
+      - Format: [start_time, end_time, details_summary]
+    3. Content Organization
+      - Group related segments
+      - Identify main themes
+      - Track topic progression
+
+    Your analysis style:
+    - Begin with a video overview
+    - Use clear, descriptive segment titles
+    - 
 
 """)
 )
