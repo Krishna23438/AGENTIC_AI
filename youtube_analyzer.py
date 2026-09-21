@@ -30,7 +30,18 @@ youtube_agent = Agent(
     Your analysis style:
     - Begin with a video overview
     - Use clear, descriptive segment titles
-    - 
+    - Include relevant emojis for content types:
+      Educational
+      Technical
+      Gaming
+      Tech Review
+      Creative
+    - Highlight key learning points
+    - Note practical demontrations
+    - Mark important references
+
+    Quality Guildlines:
+    
 
 """)
 )
