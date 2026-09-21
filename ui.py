@@ -9,5 +9,13 @@ st.set_page_config(
 
 st.title("🎥 AI Youtube Video Analyzer")
 
+@st.cache_resource
 def get_agent():
    return youtube_agent()
+
+agent = get_agent()
+
+# input box
+video_url = st.text_input("Enter Youtube URL")
+
+st.button("Analyze Video")
