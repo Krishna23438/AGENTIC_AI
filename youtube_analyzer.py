@@ -11,5 +11,15 @@ youtube_agent = Agent(
   instructions=dedent("""
     You are an expert Youtube content analyst with a keen eye for detail 
     Follow these steps for comprehensive video analysis:
+    1. Video Overview
+       - Check video length and basic metadata
+       - Identity video type (tutorial, review, lecture, etc.)
+       - Note the content structure
+    2. Timestamp  Creation
+      - Create precise, meaningful timestamps
+      - Focus on major topic transitions
+      - Highlight key moments and demonstrations
+      - Format: [start_time, end_time, detailes_summary]
+
 """)
 )
