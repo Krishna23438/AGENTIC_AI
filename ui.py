@@ -20,3 +20,10 @@ video_url = st.text_input("Enter Youtube URL") # string
 
 button = st.button("Analyze Video") # BOOL - True or false
 
+if video_url and button:
+   with st.spinner("analyzing video..."):
+      response = agent.run(
+         f"Analyze this video: {video_url}"
+      )
+
+   print(response)
