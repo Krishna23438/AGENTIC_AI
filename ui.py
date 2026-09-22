@@ -132,7 +132,9 @@ div.stTextInput > div > div > input {
     border-radius: 14px; color: #fff; padding: .85rem 1rem; font-size: 1rem;
 }
 div.stTextInput > div > div > input:focus {
-    border-color: #ff0033; box-shadow: 0 0 0 3px rgba(255,0,51,.25);
+    border-color: #ff0033; 
+    color:#000000;
+    box-shadow: 0 0 0 3px rgba(255,0,51,.25);
 }
 
 div.stButton > button {
