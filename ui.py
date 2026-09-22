@@ -168,7 +168,7 @@ div.stButton > button:hover {
 .stTabs [data-baseweb="tab-list"] { gap: .5rem; border-bottom: 1px solid rgba(255,255,255,.08); }
 .stTabs [data-baseweb="tab"] {
     background: rgba(255,255,255,.04); border-radius: 12px 12px 0 0;
-    padding: .6rem 1.2rem; color: #b3b3b3;
+    padding: .6rem 1.2rem; color: #ffffff;
 }
 .stTabs [aria-selected="true"] { background: rgba(255,0,51,.18) !important; color:#fff !important; }
 
