@@ -1,0 +1,6 @@
+streamlit
+reportlab
+python-dotenv
+agno
+groq
+youtube-transcript-api
